@@ -1,0 +1,30 @@
+﻿@model EntitySetupApp.Models.Movy
+
+
+@{
+    ViewBag.Title = "AddMovie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AddMovie</h2>
+
+@using (Html.BeginForm("SaveNewMovie", "Database", FormMethod.Post))
+{
+    <input type="hidden" name="MovieId" />
+    <fieldset>
+        <label for="MovieTitle">Title</label>
+        <input type="text" name="MovieTitle" required />
+    </fieldset>
+    <fieldset>
+        <label for="MovieTitle">Genre</label>
+        <input type="text" name="Genre" required />
+    </fieldset>
+    <fieldset>
+        <label for="MovieTitle">Year</label>
+        <input type="number" name="Year" required />
+    </fieldset>
+    <button type="submit">Submit</button>
+
+
+}
+

@@ -1,0 +1,34 @@
+﻿@model EntitySetupApp.Models.Movy
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Movie Index</h2>
+
+@{ 
+    <table>
+        <tr>
+            <th>Movie Id</th>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Year</th>
+            <th>Director</th>
+        </tr>
+        @foreach (var movie in ViewBag.MovieList)
+        {
+        <tr>
+            <td>@movie.MovieId</td>
+
+            <td>@movie.MovieTitle</td>
+
+
+            <td>@movie.Genre</td>
+            <td>@movie.Year</td>
+        </tr>
+        }
+    </table>
+    <a href="../Database/AddMovie" class="btn-group">Add a new Movie</a>
+}
+
